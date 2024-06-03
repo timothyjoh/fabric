@@ -58,7 +58,7 @@ export function PatternSelectCombo({ onChange }: SelectEvents) {
           <ChevronsUpDown className="w-4 h-4 ml-2 opacity-50 shrink-0" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-1/2 p-0">
+      <PopoverContent className="w-full p-0">
         <Command>
           <CommandInput placeholder="Search patterns..." />
           <CommandEmpty>No pattern found.</CommandEmpty>
