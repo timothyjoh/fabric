@@ -29,7 +29,7 @@ const truncate = (str: string, maxlength: number) => {
 }
 
 const title = (entry: MemoryEntry): string => {
-  return truncate(entry.title || 'unknown', 50)
+  return truncate(entry.title || 'unknown', 60)
 }
 
 const MemoryItems = ({ memory }: Props) => {

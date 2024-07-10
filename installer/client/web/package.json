@@ -10,9 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/react": "^3.4.0",
+    "@astrojs/check": "^0.8.1",
+    "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@nanostores/persistent": "^0.10.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
@@ -27,7 +28,7 @@
     "@tanstack/react-query-devtools": "^5.40.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.9.2",
+    "astro": "^4.11.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

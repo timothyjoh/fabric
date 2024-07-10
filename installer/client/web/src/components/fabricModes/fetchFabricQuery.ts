@@ -2,6 +2,7 @@ import type { ExecuteOutput } from '../../lib/execute'
 
 export type FabricTextData = { query: string; apiurl: string; pattern: string; temp: number }
 export type FabricYoutubeData = {
+  query: string
   youtubeUrl: string
   apiurl: string
   pattern: string

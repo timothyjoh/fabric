@@ -9,6 +9,7 @@ import type { FabricQueryProps } from './fetchFabricQuery'
 type Props = { onUpdate: (p: FabricQueryProps) => void }
 export function FabricYoutube({ onUpdate }: Props) {
   const [data, setData] = React.useState({
+    query: 'Youtube',
     youtubeUrl: '',
     apiurl: 'api/youtube',
     pattern: 'extract_wisdom',
@@ -27,7 +28,7 @@ export function FabricYoutube({ onUpdate }: Props) {
         <Input
           title="Youtube URL"
           id="ytinput"
-          onChangeCapture={({ currentTarget }) => update({ youtubeUrl: currentTarget.value })}
+          onChangeCapture={({ currentTarget }) => update({ youtubeUrl: currentTarget.value, query: `Youtube: ${currentTarget.value}` })}
         />
       </div>
       <div className="space-y-1">
