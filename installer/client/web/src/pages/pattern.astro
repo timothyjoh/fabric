@@ -1,7 +1,13 @@
 ---
 import "@/styles/globals.css";
 import Layout from "@/layouts/Layout.astro";
-import { CustomPatternApp } from "@/components/CustomPatternApp";
+import { CustomPatternLoader } from "@/components/CustomPatternLoader";
+import { FabricModelSelect } from '@/components/FabricModelSelect';
+import { Separator } from '@/components/ui/separator';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import Markdown from 'marked-react';
 ---
 
 <Layout title="Welcome to Fabric.">
@@ -13,8 +19,44 @@ import { CustomPatternApp } from "@/components/CustomPatternApp";
       Tweak the pattern and iterate to see what the output would be like 
       from this pattern. Save the pattern and reuse it again and again.
 		</p>
-
-		<CustomPatternApp client:load />
+		<FabricModelSelect client:load />
+		<Separator className="my-4" />
+		<section class="grid h-full grid-cols-3 gap-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>Customize the Pattern</CardTitle>
+          <CardDescription>Load an existing pattern to customize</CardDescription>
+        </CardHeader>
+        <CardContent className="grid grid-flow-row grid-rows-4 gap-4">
+						<CustomPatternLoader client:load />
+				</CardContent>
+      </Card>
+			<Card>
+        <CardHeader>
+          <CardTitle>Paste your INPUT</CardTitle>
+          <CardDescription>This is the source document you will run your Fabric pattern upon.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid grid-flow-row grid-rows-4 gap-4">
+            <div class="grow">
+              <Textarea
+                placeholder="Source Document"
+                id="document"
+                className="h-full border-box font-code"
+                rows={30}
+                onChangeCapture={({ currentTarget }) => {}}
+              />
+            </div>
+        </CardContent>
+      </Card>
+			<Card>
+        <CardHeader>
+          <CardTitle>Test the LLM</CardTitle>
+        </CardHeader>
+        <CardContent className="grid grid-flow-row grid-rows-4 gap-4">
+            <!-- <Markdown>{[""].join('\n')}</Markdown> -->
+        </CardContent>
+      </Card>
+    </section>
 	</main>
 </Layout>
 

@@ -1,7 +1,11 @@
 ---
 import "@/styles/globals.css";
 import Layout from "@/layouts/Layout.astro";
-import { FabricApp } from "@/components/FabricApp";
+import { FabricQuery } from "@/components/FabricQuery";
+import { FabricModelSelect } from '@/components/FabricModelSelect';
+import { FabricMemory } from '@/components/FabricMemory';
+import { Separator } from '@/components/ui/separator';
+import { ClearFabricMemory } from '@/components/ClearFabricMemory';
 ---
 
 <Layout title="Welcome to Fabric.">
@@ -13,7 +17,15 @@ import { FabricApp } from "@/components/FabricApp";
 			and then choose the pattern you want to run.
 		</p>
 
-		<FabricApp client:only />
+		<FabricModelSelect client:load />
+		<Separator className="my-4" />
+
+		<FabricQuery client:only />
+		<Separator className="my-4" />
+		<FabricMemory client:load />
+		<Separator className="my-4" />
+		<ClearFabricMemory />
+
 	</main>
 </Layout>
 
